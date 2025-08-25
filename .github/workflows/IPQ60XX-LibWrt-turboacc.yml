@@ -94,6 +94,12 @@ jobs:
               find "$dir" -type f -exec touch {} +
           done
         fi
+    
+    - name: Install Feeds(安装feeds)
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
 
     - name: Load Custom Configuration(加载自定义配置)
       run: |
@@ -102,12 +108,6 @@ jobs:
         cd $OPENWRT_PATH
         # 运行自定义脚本
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-
-    - name: Install Feeds(安装feeds)
-      run: |
-        cd $OPENWRT_PATH
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
 
     - name: Add TurboAcc
       run: |
