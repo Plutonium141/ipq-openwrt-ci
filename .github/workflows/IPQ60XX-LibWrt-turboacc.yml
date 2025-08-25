@@ -178,7 +178,7 @@ jobs:
         body: |
           **This is LibWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 这是开启全功能NSS的6.12内核京东云太乙固件，默认主题为Argon；该固件在ImmortalWrt的基础上，添加了额外的软件包cpufreq、ddns、upnp、wolplus、samba4、diskman、hd-idle、acme、adguardhome、sqm、wireguard，并添加了若干工具，具体详见Taiyi.config。
+          - 这是开启全功能NSS+shortcut-fe-drv的6.12内核京东云太乙固件，默认主题为Argon；该固件在LibWrt的基础上，添加了额外的软件包TurboACC、cpufreq、ddns、upnp、wolplus、samba4、diskman、hd-idle、acme、adguardhome、sqm、wireguard，并添加了若干工具，具体详见Taiyi.config。
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
