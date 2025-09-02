@@ -31,7 +31,7 @@ function git_sparse_clone() {
 
 # kucat主题
 git clone --depth=1 https://github.com/sirpdboy/luci-app-kucat-config package/kucat/luci-app-kucat-config/
-git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/kucat/
+git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/kucat/luci-theme-kucat/
 
 # Go & OpenList & ariang & frp & AdGuardHome & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
