@@ -41,11 +41,11 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo -E apt-get -y update
-        sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E apt-get -yq update
+        sudo -E apt-get -yq install $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E systemctl daemon-reload
-        sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get -y clean
+        sudo -E apt-get -yq autoremove --purge
+        sudo -E apt-get -yq clean
         sudo timedatectl set-timezone "$TZ"
 
     - name: Checkout(检出代码)
