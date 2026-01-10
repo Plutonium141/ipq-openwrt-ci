@@ -14,6 +14,7 @@ sed -i "/attendedsysupgrade/d" $(find ./feeds/luci/collections/ -type f -name "M
 
 # 移除要替换的包
 rm -rf feeds/luci/applications/luci-app-argon-config
+rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-appfilter
 rm -rf feeds/luci/applications/luci-app-frpc
 rm -rf feeds/luci/applications/luci-app-frps
@@ -33,14 +34,18 @@ function git_sparse_clone() {
 }
 
 # kucat主题
-git clone --depth=1 https://github.com/sirpdboy/luci-app-kucat-config package/kucat/luci-app-kucat-config/
-git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/kucat/luci-theme-kucat/
+git clone --depth=1 https://github.com/sirpdboy/luci-theme-kucat package/kucat/luci-theme-kucat
+git clone --depth=1 https://github.com/sirpdboy/luci-app-kucat-config package/kucat/luci-app-kucat-config
 
 # Aurora主题
-git clone --depth=1 https://github.com/eamonxg/luci-theme-aurora feeds/luci/themes/luci-theme-aurora
-git clone --depth=1 https://github.com/eamonxg/luci-app-aurora-config feeds/luci/applications/luci-app-aurora-config
+git clone --depth=1 https://github.com/eamonxg/luci-theme-aurora package/aurora/luci-theme-aurora
+git clone --depth=1 https://github.com/eamonxg/luci-app-aurora-config package/aurora/luci-app-aurora-config
 
-# Go & OpenList & ariang & frp & AdGuardHome & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
+# Argon主题
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/argon/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/argon/luci-app-argon-config
+
+# Go & OpenList & ariang & frp & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist
 
