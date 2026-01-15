@@ -46,7 +46,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon package/argon/
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/argon/luci-app-argon-config
 
 # Go & OpenList & ariang & frp & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/luci-app-openlist2 package/openlist
 
 # 添加fuse依赖 修复openlist2编译错误
