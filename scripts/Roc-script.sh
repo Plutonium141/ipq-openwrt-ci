@@ -12,6 +12,10 @@
 # 移除luci-app-attendedsysupgrade软件包
 sed -i "/attendedsysupgrade/d" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 
+# 添加kexec支持aarch64架构
+sed -i -e 's/@(armeb||arm||i386||x86_64||powerpc64||mipsel||mips)/@(armeb||arm||aarch64||i386||x86_64||powerpc64||mipsel||mips)/' \
+    -e 's/@(i386||x86_64||arm)/@(i386||x86_64||arm||aarch64)/' package/boot/kexec-tools/Makefile
+
 # 移除要替换的包
 rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf feeds/luci/themes/luci-theme-argon
@@ -60,6 +64,7 @@ mv -f package/luci-app-frpc feeds/luci/applications/luci-app-frpc
 mv -f package/luci-app-frps feeds/luci/applications/luci-app-frps
 git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
+git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status package/luci-app-temp-status
 
 #git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 #git clone --depth=1 https://github.com/lwb1978/openwrt-gecoosac package/openwrt-gecoosac
